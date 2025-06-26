@@ -33,5 +33,5 @@
 	bool move2 = false;
 	bool rotate2 = false;
 	
-	protected override int BuildHash() => System.HashCode.Combine("" );
+	protected override int BuildHash() => System.HashCode.Combine(move1, rotate1, move2, rotate2);
 }
