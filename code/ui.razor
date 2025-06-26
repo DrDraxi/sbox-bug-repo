@@ -1,0 +1,37 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="container">
+		<div class="col-item">
+			<div class="button" @onclick="@(() => move1 = !move1)">Move✅</div>
+			<div class="button" @onclick="@(() => rotate1 = !rotate1)">Rotate</div>
+			<div class="panel @(move1 ? "move_pos" : "")" @onclick="@(() => move1 = !move1)">
+				<div class="arrow @(rotate1 ? "rotate" : "")">
+					↓
+				</div>
+			</div>
+		</div>
+		<div class="col-item">
+			<div class="button" @onclick="@(() => move2 = !move2)">Translate❌</div>
+			<div class="button" @onclick="@(() => rotate2 = !rotate2)">Rotate</div>
+			<div class="panel @(move2 ? "move_translate" : "")" @onclick="@(() => move2 = !move2)">
+				<div class="arrow @(rotate2 ? "rotate" : "")">
+					↓
+				</div>
+			</div>
+		</div>
+	</div>
+</root>
+
+@code
+{
+	bool move1 = false;
+	bool rotate1 = false;
+	bool move2 = false;
+	bool rotate2 = false;
+	
+	protected override int BuildHash() => System.HashCode.Combine("" );
+}
